@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preview-image-simple">
+        <div class="preview-image-shade"></div>
+        <image src="#" class="preview-image-content" />
+    </div>
+
+    <ul class="button-container">
+        <li data-image="./image/1.png">显示图片1</li>
+        <li data-image="./image/2.png">显示图片2</li>
+    </ul>
+    <script src="./js/index.js"></script>
+    <script>
+        let previewImage = new PreviewImage();
+        // buttons
+        let buttonContainer = document.querySelector('.button-container');
+        buttonContainer.addEventListener('click', e => {
+            let target = e.target;
+            if (target.tagName.toUpperCase() === "LI") {
+                previewImage.open(target.dataset.image);
+            }
+        });
+    </script>
+</body>
+
+</html>

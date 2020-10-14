@@ -1,0 +1,63 @@
+.preview-image-simple {
+  position: fixed;
+  z-index: 2020;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  cursor: zoom-out;
+}
+.preview-image-simple.show {
+  animation: in 600ms linear 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  display: block;
+}
+.preview-image-simple.hide {
+  animation: out 600ms linear 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+.preview-image-simple .preview-image-shade {
+  cursor: zoom-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+}
+.preview-image-simple .preview-image-content {
+  max-width: 70%;
+  object-fit: scale-down;
+  cursor: zoom-out;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  vertical-align: top;
+}
+@keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
